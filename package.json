@@ -1,0 +1,11 @@
+{
+  "name": "codepractice",
+  "version": "1.0.0",
+  "description": "Playground for practicing toy problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Zach McCain",
+  "license": "ISC"
+}
