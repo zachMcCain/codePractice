@@ -104,12 +104,21 @@ var addTwoNumbers = function(l1, l2) {
       firstPointer = firstPointer.next;
     }
   }
-  // iterate through the array,
-  for (var i = 0; i < sumArray.length; i++) {
+  let linkedList = [];
+  // iterate through the array backwards,
+  let j = 0;
+  for (var i = sumArray.length - 1; i >= 0; i--) {
     // creating a linked list from the elements
-
-  // return the first node in the new list
+    if (i < sumArray.length - 1) {
+      let node = new ListNode(sumArray[i], linkedList[j]) ////// need to grab the element from the linked list that is
+    } else {
+      let node = new ListNode(sumArray[i])
+    }
+    linkedList.push(node);
+    j--;
   }
+  // return the first node in the new list
+  return (linkedList[linkedList.length - 1]);
 };
 
 function ListNode(val, next) {
@@ -122,7 +131,7 @@ const testAddTwoNumbers = function() {
   let secondNode = new ListNode(2, firstNode);
   let thirdNode = new ListNode(3, secondNode);
   console.log('first node: ', firstNode, " second node: ", secondNode, ' third node: ', thirdNode);
-  // console.log(addTwoNumbers(firstNode, firstNode));
+  console.log(addTwoNumbers(firstNode, firstNode));
 }
 
 testAddTwoNumbers();
