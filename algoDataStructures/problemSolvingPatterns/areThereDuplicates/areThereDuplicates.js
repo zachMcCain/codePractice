@@ -32,6 +32,8 @@ function areThereDuplicatesCounter() {
   return false;
 }
 
+// Or, sort and then use pointers as iterating through the args
+
 function areThereDuplicatesPointers(...args) {
   console.log(Array.isArray(arguments));
   console.log(Array.isArray(args));
@@ -45,6 +47,8 @@ function areThereDuplicatesPointers(...args) {
   }
   return false;
 }
+
+// Or, turn it into a set and check its size against the length of the arguments
 
 function areThereDuplicatesSet() {
   return new Set(arguments).size !== arguments.length;
