@@ -28,3 +28,31 @@
 
 
 
+
+
+function climbingStairs(n) {
+  // store a count variable
+  let count = 0;
+  // create a recursive inner function
+  function findSolutions(n) {
+    // Create a 2 step for loop
+    for (let i = 1; i <= 2; i++) {
+      // if the current value is equal to n, increment the count and return
+      if (i === n) {
+        count++;
+        return
+        // if it is more than n, return
+      } else if (i > n) {
+        return
+        // if it is less than n, call climbing Stairs on n - the current value
+      } else {
+        findSolutions(n - i);
+      }
+    }
+  }
+  findSolutions(n);
+  // return the count variable
+  return count;
+}
+
+console.log(climbingStairs(14));
